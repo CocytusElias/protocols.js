@@ -1,0 +1,50 @@
+{
+  "name": "protocols.js",
+  "version": "0.0.0",
+  "description": "Contains Http and Websocket common protocol library",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "format": "prettier --write src/",
+    "lint": "eslint src/",
+    "prebuild": "npm run format && npm run lint && git add -A src && rm -rf lib",
+    "build": "tsc",
+    "preversion": "npm run build",
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm run build",
+    "version": "npm run format && git add -A src"
+  },
+  "pre-commit": [
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliassama/protocols.js.git"
+  },
+  "author": "eliassama <elias@elias.ink> (https://github.com/eliassama)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eliassama/protocols.js/issues"
+  },
+  "homepage": "https://github.com/eliassama/protocols.js",
+  "devDependencies": {
+    "@types/jest": "27.0.3",
+    "@typescript-eslint/eslint-plugin": "5.5.0",
+    "@typescript-eslint/parser": "5.5.0",
+    "eslint": "8.4.1",
+    "eslint-config-eliassama": "1.3.2",
+    "eslint-plugin-jest": "25.3.0",
+    "jest": "27.4.3",
+    "pre-commit": "1.2.2",
+    "prettier": "2.5.1",
+    "ts-jest": "27.1.1",
+    "typescript": "4.5.2"
+  },
+  "files": [
+    "lib/*"
+  ]
+}
