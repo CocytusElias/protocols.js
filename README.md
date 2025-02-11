@@ -67,4 +67,4 @@ pnpm add protocols.js
 
 ## Maintainers
 
-[@eliassama](https://github.com/eliassama)
+[@CocytusElias](https://github.com/CocytusElias)
